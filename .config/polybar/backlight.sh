@@ -28,12 +28,12 @@ getIcon() {
 }
 
 increase(){
-	brightnessctl s +2% > /dev/null
+	brightnessctl s +1% > /dev/null
 	return
 }
 
 decrease(){
-	brightnessctl s 2%- > /dev/null
+	brightnessctl s 1%- > /dev/null
 	return
 }
 
@@ -48,7 +48,7 @@ case "$1" in
 		exit
 		;;
 	*)
-		inotifywait -q -m -e close_write /sys/class/backlight/intel_backlight/brightness | 
+		# inotifywait -q -m -e close_write /sys/class/backlight/intel_backlight/brightness | 
 			echo "$(getIcon) $brightness_percent%"
 		;;
 esac
