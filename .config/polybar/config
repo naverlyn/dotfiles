@@ -58,7 +58,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = fontawesome:pixelsize=10;1
 
 
-modules-left = dwm-tags
+modules-left = dwm
 modules-center = xwindowcop 
 modules-right = backlight pulseaudio system-fan-speed cpu wlan eth kernel username date powermenu
 
@@ -93,7 +93,7 @@ font-2 = siji:pixelsize=10;1
 font-3 = fontawesome:pixelsize=10;1
 
 
-modules-left = dwm-tags
+modules-left = dwm
 modules-center = xwindowcop 
 modules-right = backlight pulseaudio system-fan-speed cpu wlan eth kernel username date powermenu
 
@@ -161,71 +161,83 @@ exec=~/.config/polybar/naming.sh
 [module/dwm]
 type = internal/dwm
 format = <label-tags> <label-layout> <label-floating> <label-title>
-;socket-path = /tmp/dwm.sock
+; Path to dwm socket (default: /tmp/dwm.sock)
+; socket-path = /tmp/dwm.sock
 
-enable-tags-click = true
-enable-tags-scroll = true
+; Left-click to view tag, right-click to toggle tag view
+enable-tags-click = false
+; Scroll to cycle between available tags
+enable-tags-scroll = false
+; If true and enable-tags-scroll = true, scrolling will view all tags regardless if occupied
 tags-scroll-empty = false
+; If true and enable-tags-scroll = true, scrolling will cycle through tags backwards
 tags-scroll-reverse = false
-tags-scroll-wrap = true
-enable-layout-click = true
-enable-layout-scroll = true
-layout-scroll-wrap = true
-layout-scroll-reverse = true
+; If true and enable-tags-scroll = true, wrap active tag when scrolling
+tags-scroll-wrap = false
+; Left-click to set secondary layout, right-click to switch to previous layout
+enable-layout-click = false
+; Scroll to cycle between available layouts
+enable-layout-scroll = false
+; Wrap when scrolling and reaching beginning/end of layouts
+layout-scroll-wrap = false
+; Reverse scroll direction
+layout-scroll-reverse = false
 
 ; If enable-layout-click = true, clicking the layout symbol will switch to this layout
 secondary-layout-symbol = [M]
 
-; Tagas:
+; Separator in between shown tags
+; label-separator = |
+
+; Title of currently focused window
+; Available tokens:
+;   %title%
+label-title = %title%
+label-title-padding = 2
+label-title-foreground = ${colors.primary}
+label-title-maxlen = 30
+
+; Symbol of current layout
+; Available tokens:
+;   %symbol%
+label-layout = %symbol%
+label-layout-padding = 2
+label-layout-foreground = #000
+label-layout-background = ${colors.primary}
+
+; Text to show when currently focused window is floating
+label-floating = F
+
+; States: focused, unfocused, visible, urgent, empty
 ; Available tokens:
 ;   %name%
 
-label-floating = F
-
-label-title = %title%
-label-title-maxlen = 35
-label-title-padding = 1
-label-title-foreground = ${colors.foreground}
-label-title-background = ${colors.background}
-
-label-layout = %symbol%
-label-layout-padding = 1
-label-layout-foreground = ${colors.foreground}
-label-layout-background = ${colors.background}
-
-; focused = Active tag on focused monitor
+; focused = Selected tag on focused monitor
 label-focused = %name%
-label-focused-background = ${colors.tag-focused-background}
-label-focused-foreground = ${colors.foreground}
+label-focused-background = ${colors.background-alt}
+label-focused-underline= ${colors.primary}
 label-focused-padding = 2
-label-focused-font = 7
 
-; unfocused = Inactive tag on any monitor
+; unfocused = Unselected tag on unselected monitor
 label-unfocused = %name%
-label-unfocused-background = ${colors.tag-unfocused-background}
-label-unfocused-foreground = ${colors.foreground}
 label-unfocused-padding = 2
-label-unfocused-font = 7
 
-; visible = Active tag on unfocused monitor
+; visible = Unselected tag, but occupied tag on any monitor
 label-visible = %name%
-label-visible-background = ${colors.tag-visible-background}
-label-visible-foreground = ${colors.foreground}
-label-visible-padding = 2
-label-visible-font = 7
+label-visible-background = ${self.label-focused-background}
+label-visible-underline = ${self.label-focused-underline}
+label-visible-padding = ${self.label-focused-padding}
 
-; urgent = Tag with urgency hint set
+; urgent = Unselected tag with window that has urgency hint set
 label-urgent = %name%
-label-urgent-background = ${colors.tag-urgent-background}
+label-urgent-background = ${colors.alert}
 label-urgent-padding = 2
-label-urgent-font = 7
 
-; empty = Tags with no windows assigned
+; empty = Unselected and unoccupied tag
 ; This can be set to an empty string to hide empty tags
-label-empty =
-
-; Separator in between workspaces
-; label-separator = |
+label-empty = %name%
+label-empty-background = ${colors.primary}
+label-empty-padding = 2
 
 [module/system-fan-speed]
 type = custom/script
