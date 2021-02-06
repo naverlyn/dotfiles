@@ -18,10 +18,10 @@
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+background = #991f1f1f
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
-foreground = #dfdfdf
+;foreground = #dfdfdf
 foreground-alt = #555
 primary = #ffb52a
 secondary = #e60053
@@ -60,16 +60,56 @@ font-3 = Font Awesome 5 Brands:pixelsize=12;2
 
 modules-left = dwm
 modules-center = xwindow 
-modules-right = backlight pulseaudio system-fan-speed cpu wlan eth kernel username date powermenu
+modules-right =  username date powermenu
+
+[bar/yea-eDP]
+monitor = ${env:MONITOR:eDP}
+tray-position = ${env:TRAY_POSITION:right}
+width = 100%
+height = 28
+;offset-x = 0.5%
+offset-y = 0%
+radius = 
+fixed-center = true
+
+background = ${colors.background}
+foreground = ${colors.foreground}
+
+line-size = 2
+line-color = #f00
+
+border-size = 0
+border-color = #00000000
+
+padding-left = 0
+padding-right = 2
+
+module-margin-left = 1
+module-margin-right = 2
+
+font-0 = fixed:pixelsize=10;1
+font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-2 = siji:pixelsize=10;1
+font-3 = Font Awesome 5 Brands:pixelsize=10;1
+font-4 = Font Awesome 5 Free:pixelsize=10;1
+font-5 = Font Awesome 5 Free Solid:pixelsize=10;1
+
+font-10 = comfortaa:pixelsize=10;1
+
+
+modules-left = dwm
+modules-center = xwindow
+modules-right = username date powermenu
 
 
 [bar/yea]
 monitor = ${env:MONITOR}
+tray-position = ${env:TRAY_POSITION:right}
 width = 100%
-height = 25
+height = 28
 ;offset-x = 0.5%
 offset-y = 0%
-radius = 13
+radius = 
 fixed-center = true
 
 background = ${colors.background}
@@ -154,7 +194,7 @@ cursor-scroll = ns-resize
 
 [module/kernel]
 type = custom/script
-
+label-underline = #4bcf17
 exec=~/.config/polybar/naming.sh
 
 [module/dwm]
@@ -223,7 +263,7 @@ label-floating = F
 
 ; focused = Selected tag on focused monitor
 label-focused = %name% Here
-label-focused-background = ${colors.background-alt}
+;label-focused-background = ${colors.background-alt}
 label-focused-underline= #70cafa
 label-focused-padding = 2
 
@@ -256,7 +296,7 @@ interval = 3
 
 [module/username]
 type = custom/script
-
+label-underline = #20f1f5
 exec=~/.config/polybar/username.sh
 
 [module/backlight]
@@ -388,7 +428,8 @@ type = internal/network
 interface = wlan0
 interval = 3.0
 
-format-connected = <ramp-signal> <label-connected>
+format-connected = <label-connected>
+;format-connected = <ramp-signal> <label-connected>
 format-connected-underline = #9f78e1
 label-connected = %{A1:nm-applet:}%essid%%{A}
 ;label-connected = %essid%
@@ -445,7 +486,7 @@ type = internal/pulseaudio
 format-volume = <label-volume> <bar-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
-
+label-volume-underline = #8af520
 label-muted = 🔇 muted
 label-muted-foreground = #666
 
@@ -554,17 +595,21 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = Logout
-label-open-foreground = ${colors.secondary}
-label-close =  cancel
+label-open = 
+label-open-foreground = #fff
+label-close = cancel
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
 menu-0-0 = reboot
 menu-0-0-exec = menu-open-1
+
 menu-0-1 = power off
 menu-0-1-exec = menu-open-2
+
+menu-0-2 = Logout
+menu-0-2-exec = killall dwm
 
 menu-1-0 = cancel
 menu-1-0-exec = menu-open-0
