@@ -1,3 +1,4 @@
 #!/bin/zsh
 
-uname -r
+pro=" $(uname -r)"
+echo "$pro"

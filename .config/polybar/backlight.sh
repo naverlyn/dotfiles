@@ -22,7 +22,7 @@ getIcon() {
 	elif [ "$brightness_percent" -ge 10 ]; then
 	    icon=""
 	else
-	    icon=""
+	    icon=""
 	fi
 	echo "$icon"
 }
