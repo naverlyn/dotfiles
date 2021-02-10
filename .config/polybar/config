@@ -59,7 +59,7 @@ font-3 = Font Awesome 5 Brands:pixelsize=12;2
 
 
 modules-left = dwm
-modules-center = xwindow 
+modules-center = 
 modules-right =  username date powermenu
 
 [bar/yea-eDP]
@@ -98,7 +98,7 @@ font-10 = comfortaa:pixelsize=10;1
 
 
 modules-left = dwm
-modules-center = xwindow
+modules-center = 
 modules-right = username date powermenu
 
 
@@ -139,7 +139,7 @@ font-10 = comfortaa:pixelsize=10;1
 
 modules-left = dwm
 modules-center = 
-modules-right = backlight pulseaudio memory cpu wlan eth kernel username date powermenu
+modules-right = backlight pulseaudio memory cpu wlan eth username date powermenu
 
 [bar/example]
 monitor = ${env:MONITOR}
@@ -345,28 +345,6 @@ label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
 label-unmounted = %mountpoint% not mounted
 label-unmounted-foreground = ${colors.foreground-alt}
 
-[module/bspwm]
-type = internal/bspwm
-
-label-focused = %index%
-label-focused-background = ${colors.background-alt}
-label-focused-underline= ${colors.primary}
-label-focused-padding = 2
-
-label-occupied = %index%
-label-occupied-padding = 2
-
-label-urgent = %index%!
-label-urgent-background = ${colors.alert}
-label-urgent-padding = 2
-
-label-empty = %index%
-label-empty-foreground = ${colors.foreground-alt}
-label-empty-padding = 2
-
-; Separator in between workspaces
-; label-separator = |
-
 [module/mpd]
 type = internal/mpd
 format-online = <label-song>  <icon-prev> <icon-stop> <toggle> <icon-next>
@@ -471,7 +449,7 @@ interval = 1
 date =
 date-alt = " %d-%m-%Y"
 
-time = %H:%M
+time = %H:%M %p
 time-alt = %H:%M:%S
 
 format-prefix = 
@@ -483,11 +461,11 @@ label = %date% %time%
 [module/pulseaudio]
 type = internal/pulseaudio
 
-format-volume = <label-volume> <bar-volume>
+format-volume = <label-volume>
 label-volume = VOL %percentage%%
 label-volume-foreground = ${root.foreground}
 label-volume-underline = #8af520
-label-muted = 🔇 muted
+label-muted =  muted
 label-muted-foreground = #666
 
 bar-volume-width = 5
@@ -588,6 +566,15 @@ ramp-1 = 
 ramp-2 = 
 ramp-foreground = ${colors.foreground-alt}
 
+[module/search]
+type = custom/menu
+label-open = z
+label-open-padding = 1
+menu-0-0 = 
+menu-0-0-exec = dmenu_run
+menu-0-0-background = ${colors.background-dor}
+
+
 [module/powermenu]
 type = custom/menu
 
@@ -595,31 +582,26 @@ expand-right = true
 
 format-spacing = 1
 
-label-open = 
-label-open-foreground = #fff
-label-close = cancel
+label-open = 
+label-open-background = ${colors.background-dor}
+label-open-padding = 1
+label-open-foreground = #ff0800
+label-close = 
 label-close-foreground = ${colors.secondary}
 label-separator = |
 label-separator-foreground = ${colors.foreground-alt}
 
-menu-0-0 = reboot
-menu-0-0-exec = menu-open-1
+menu-0-0 = 
+menu-0-0-exec = reboot
+menu-0-0-foreground = #7afff6
 
-menu-0-1 = power off
-menu-0-1-exec = menu-open-2
+menu-0-1 = 
+menu-0-1-exec = shutdown -P now
+menu-0-1-foreground = #ff0800
 
-menu-0-2 = Logout
+menu-0-2 = 
 menu-0-2-exec = killall dwm
 
-menu-1-0 = cancel
-menu-1-0-exec = menu-open-0
-menu-1-1 = reboot
-menu-1-1-exec = reboot
-
-menu-2-0 = power off
-menu-2-0-exec = shutdown -P now
-menu-2-1 = cancel
-menu-2-1-exec = menu-open-0
 
 [settings]
 screenchange-reload = true
