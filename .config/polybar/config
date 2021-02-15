@@ -139,7 +139,7 @@ font-10 = comfortaa:pixelsize=10;1
 
 modules-left = dwm
 modules-center = 
-modules-right = backlight pulseaudio memory cpu wlan eth username date powermenu
+modules-right = backlight pulseaudio memory cpu wlan netspeed eth username date powermenu
 
 [bar/example]
 monitor = ${env:MONITOR}
@@ -172,7 +172,7 @@ font-3 = fontawesome:pixelsize=10;1
 
 modules-left = xwindow
 modules-center = dwm 
-modules-right = backlight pulseaudio cpu wlan eth kernel username date powermenu
+modules-right = backlight pulseaudio cpu wlan netspeed eth kernel username date powermenu
 
 tray-position = right
 tray-padding = 0
@@ -299,10 +299,20 @@ type = custom/script
 label-underline = #20f1f5
 exec=~/.config/polybar/username.sh
 
+[module/netspeed]
+type = internal/network
+interface = wlan0
+interval = 1.0
+label-connected = "D: %downspeed% U: %upspeed%"
+label-underline = #fff
+;label-disconnected = disconnected
+;label-connected-background = #FF0000
+
 [module/backlight]
 type = custom/script
 
 exec=~/.config/polybar/backlight.sh
+label-underline = #fff
 
 tail=true
 interval=0
