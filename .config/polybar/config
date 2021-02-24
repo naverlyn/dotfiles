@@ -31,7 +31,7 @@ alert = #bd2c40
 [bar/right]
 bottom = true
 monitor = ${env:MONITOR:eDP}
-tray-position = ${env:TRAY_POSITION:right}
+tray-position = ${env:TRAY_POSITION:left}
 width = 10%
 height = 28
 offset-x = 90%
@@ -68,11 +68,11 @@ modules-left =
 modules-center = 
 modules-right = powermenu
 
-[bar/yea-bottom]
+[bar/bottom]
 bottom = true
-monitor = ${env:MONITOR:eDP}
+monitor = ${env:MONITOR:HDMI-0}
 ;tray-position = ${env:TRAY_POSITION:right}
-width = 20%
+width = 25%
 height = 28
 ;offset-x = 0.5%
 offset-y = 0%
@@ -143,12 +143,12 @@ font-5 = Font Awesome 5 Free Solid:pixelsize=10;1
 font-10 = comfortaa:pixelsize=10;1
 
 
-modules-left = dwm
+modules-left = dwm title
 modules-center = 
-modules-right = powermenu
+modules-right = 
 
 
-[bar/yea]
+[bar/up]
 monitor = ${env:MONITOR}
 ;tray-position = ${env:TRAY_POSITION:right}
 width = 100%
@@ -184,7 +184,7 @@ font-10 = comfortaa:pixelsize=10;1
 
 modules-left = title
 modules-center = 
-modules-right = backlight pulseaudio memory cpu wlan netspeed eth username date powermenu
+modules-right = backlight pulseaudio memory cpu wlan netspeed eth username date
 
 
 ;cursor-click = pointer
