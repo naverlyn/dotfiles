@@ -1,7 +1,7 @@
 /* ---- 💫 https://github.com/JaKooLit 💫 ---- */
 
-// ### DEFAULT v4 (Laptop)  - Top ### //
-{
+// ### DEFAULT v5 (Laptop)  - Top ### //
+[{
 "include": [
   "$HOME/.config/waybar/Modules",
   "$HOME/.config/waybar/ModulesWorkspaces",
@@ -9,7 +9,6 @@
   "$HOME/.config/waybar/ModulesGroups",
   ],
 "layer": "top",
-//"mode": "dock",
 "exclusive": true,
 "passthrough": false,
 "position": "top",
@@ -22,33 +21,102 @@
 
 "modules-left": [
 	"group/app_drawer",
-	"custom/separator#dot-line",
 	"group/mobo_drawer",
 	"custom/separator#blank",
-	"group/laptop",
 	"custom/separator#line",
 	"custom/weather",
 	"custom/separator#line",
-	"hyprland/workspaces#pacman",
 	],
 
 "modules-center": [
-	"custom/swaync",
 	"custom/separator#dot-line",
 	"clock",
 	"custom/separator#line",
-	"custom/separator#dot-line",
 	"idle_inhibitor",	
 	], 
 
 "modules-right": [
 	"network#speed",
-	"group/connections",
 	"custom/separator#line",
 	"tray",
 	"mpris", 
 	"group/audio",
 	"custom/separator#dot-line",
+	"custom/swaync",
 	"group/status",
 	],
-}
+},
+
+{"include": [
+  "$HOME/.config/waybar/Modules",
+  "$HOME/.config/waybar/ModulesWorkspaces",
+  "$HOME/.config/waybar/ModulesCustom",
+  "$HOME/.config/waybar/ModulesGroups",
+  ],
+"layer": "top",
+"mode": "dock",
+"exclusive": true,
+"passthrough": false,
+"position": "bottom",
+"spacing": 5,
+"fixed-center": true,
+"ipc": true,
+"padding-top": 5,
+"margin-left": 0,
+"margin-right": 0,
+// "layer": "top",
+// //"mode": "dock",
+// "exclusive": true,
+// "passthrough": false,
+// "position": "top",
+// "spacing": 4,
+// "fixed-center": true,
+// "ipc": true,
+// //"margin-top": 0,
+// //"margin-bottom": 0,
+// //"margin-left": 0,
+// //"margin-right": 0,
+	
+"modules-left": [
+	"hyprland/workspaces#indo",
+	"custom/separator#line",
+	"mpris",
+	"wlr/taskbar"],
+
+"modules-center": ["hyprland/window"], 
+	
+"modules-right": [
+	"custom/backlight",
+	"backlight/slider",
+	"custom/speaker",
+	"pulseaudio/slider",
+	"battery",
+	],
+
+// Additional modules //
+"pulseaudio/slider": {
+	"min": 0,
+	"max": 100,
+	"orientation": "horizontal"
+	
+},
+
+"custom/speaker": {
+	"exec": "echo '🔊'",  
+	"interval": 1,
+	"format": "{}"
+},
+
+"backlight/slider": {
+	"min": 0,
+	"max": 100,
+	"orientation": "horizontal",
+	"device": "intel_backlight"
+},
+
+"custom/backlight": {
+	"exec": "echo '✨'",  
+	"interval": 1,
+	"format": "{}"
+},
+}]

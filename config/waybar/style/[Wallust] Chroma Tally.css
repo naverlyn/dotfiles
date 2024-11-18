@@ -8,21 +8,21 @@ font-family: "JetBrainsMono Nerd Font";
 font-weight: bold;
 min-height: 0;
 /* set font-size to 100% if font scaling is set to 1.00 using nwg-look */
-font-size: 97%;
+font-size: 100%;
 font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar {
     background: rgba (0, 0, 0, 0.5);
-    border-radius: 12px;
-	border-bottom: 2px;
+    border-radius: 5px;
+	/* border-bottom: 2px; */
     border-style: solid;
 	border-color: @color12; 
 }
 
 window#waybar.empty,
 window#waybar.empty #window {
-    background-color: transparent;
+    background-color: rgba(0, 0, 0, 0.307);
     padding: 0px;
     border: 0px;
 }
@@ -30,7 +30,7 @@ window#waybar.empty #window {
 #workspaces {
 	background: transparent;
 	padding: 0px 1px;
-	border-radius: 15px;
+	border-radius: 5px;
 	border: 0px;
 	font-style: normal;
 	color: #0F1419;
@@ -39,10 +39,11 @@ window#waybar.empty #window {
 #taskbar button,
 #workspaces button {
 	padding: 0px 5px;
-	border-radius: 15px;
+	border-radius: 5px;
 	border: 0px;
 	color: #0F1419;
-	background: linear-gradient(45deg, #95E6CB, #59C2FF, #D2A6FF);
+	background: rgba(14, 180, 180, 0.336);
+	/* background: linear-gradient(45deg, #95E6CB, #59C2FF, #D2A6FF); */
 	opacity: 0.5;
 	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
@@ -50,17 +51,18 @@ window#waybar.empty #window {
 #taskbar button.active,
 #workspaces button.active {
 	padding: 0px 5px;
-	border-radius: 15px;
-	border: 0px;
+	border-radius: 5px;
+	border: 2px;
 	color: #0F1419;
-	background: linear-gradient(45deg, #59C2FF, #D2A6FF);
+	background: rgba(45, 245, 245, 0.726);
+	/* background: linear-gradient(45deg, #59C2FF, #D2A6FF); */
 	opacity: 1.0;
 	min-width: 40px;
 	transition: all 0.3s cubic-bezier(.55,-0.68,.48,1.682);
 }
 
 #workspaces button:hover {
-	border-radius: 15px;
+	border-radius: 5px;
 	color: #0F1419;
 	background: linear-gradient(45deg, #59C2FF, #D2A6FF);
 	opacity: 0.8;
@@ -138,7 +140,7 @@ tooltip {
 
  
 #clock {
- color:#a3be8c;
+ color:#f1ffe5;
 }
 
 #backlight {
@@ -188,7 +190,7 @@ tooltip {
 }
 
 #network{
-    color:#a3be8c;
+    color:#cdcfcb;
 }
 
 #network.disconnected {
@@ -237,7 +239,8 @@ tooltip {
 }
 
 #window{
-    border-style: hidden; 
+    border-style: hidden;
+    color: #ffffff;
 }
 
 #custom-lock,    

@@ -19,7 +19,7 @@
 
 "custom/file_manager": {
 	"format": " ",
-	"on-click": "thunar",
+	"on-click": "nemo",
 	"tooltip": true,
 	"tooltip-format": "File Manager",
 },
@@ -33,7 +33,7 @@
 
 "custom/browser": {
 	"format": " ",
-	"on-click": "firefox",
+	"on-click": "brave",
 	"tooltip": true,
 	"tooltip-format": "Launch Browser",
 },

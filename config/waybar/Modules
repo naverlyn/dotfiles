@@ -190,7 +190,7 @@
 },
 "hyprland/window": {
 	"format": "{}",
-	"max-length": 20,
+	"max-length": 35,
 	"separate-outputs": true,
 	"offscreen-css": true,
 	"offscreen-css-text": "(inactive)",
@@ -280,7 +280,7 @@
 "network#speed": {
 	"interval": 1,
 	"format": "{ifname}",
-	"format-wifi": "{icon}  {bandwidthUpBytes}  {bandwidthDownBytes}",
+	"format-wifi": " {bandwidthUpBytes}  {bandwidthDownBytes}",
 	"format-ethernet": "󰌘  {bandwidthUpBytes}  {bandwidthDownBytes}",
 	"format-disconnected": "󰌙",
 	"tooltip-format": "{ipaddr}",
