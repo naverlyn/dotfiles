@@ -4,6 +4,7 @@
 @import '../../.config/waybar/wallust/colors-waybar.css';
 
 * {
+/* font-family: "JetBrainsMono Nerd Font"; */
 font-family: "JetBrainsMono Nerd Font";
 font-weight: bold;
 min-height: 0;
@@ -13,11 +14,11 @@ font-feature-settings: '"zero", "ss01", "ss02", "ss03", "ss04", "ss05", "cv31"';
 }
 
 window#waybar {
-    background: rgba (0, 0, 0, 0.5);
+    background: rgba (0, 0, 0, 0.307);
     border-radius: 5px;
-	/* border-bottom: 2px; */
-    border-style: solid;
-	border-color: @color12; 
+    border-bottom: 2px;
+    border-style: dotted;
+    border-color: @color12; 
 }
 
 window#waybar.empty,
@@ -33,7 +34,7 @@ window#waybar.empty #window {
 	border-radius: 5px;
 	border: 0px;
 	font-style: normal;
-	color: #0F1419;
+	color: #9cc1e5;
 }
 
 #taskbar button,
@@ -41,7 +42,7 @@ window#waybar.empty #window {
 	padding: 0px 5px;
 	border-radius: 5px;
 	border: 0px;
-	color: #0F1419;
+	color: #ffffff;
 	background: rgba(14, 180, 180, 0.336);
 	/* background: linear-gradient(45deg, #95E6CB, #59C2FF, #D2A6FF); */
 	opacity: 0.5;

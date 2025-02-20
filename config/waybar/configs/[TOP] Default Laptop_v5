@@ -26,10 +26,11 @@
 	"custom/separator#line",
 	"custom/weather",
 	"custom/separator#line",
+	"battery",
 	],
 
 "modules-center": [
-	"custom/separator#dot-line",
+	"custom/separator#line",
 	"clock",
 	"custom/separator#line",
 	"idle_inhibitor",	
@@ -78,19 +79,18 @@
 // //"margin-right": 0,
 	
 "modules-left": [
-	"hyprland/workspaces#indo",
-	"custom/separator#line",
-	"mpris",
-	"wlr/taskbar"],
+	"hyprland/window",
+	],
 
-"modules-center": ["hyprland/window"], 
+"modules-center": [
+	"hyprland/workspaces#indo",
+	], 
 	
 "modules-right": [
 	"custom/backlight",
 	"backlight/slider",
 	"custom/speaker",
 	"pulseaudio/slider",
-	"battery",
 	],
 
 // Additional modules //
